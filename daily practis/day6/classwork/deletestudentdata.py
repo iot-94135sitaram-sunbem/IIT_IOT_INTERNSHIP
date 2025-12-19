@@ -1,18 +1,20 @@
-# establish connection with mysql server
+# import mysql connector
 import mysql.connector
+
+# establish connection with mysql server
 connection = mysql.connector.connect(
     host = "127.0.0.1",
     port = 3306,
     user = "root",
     password = "root",
-    database = "sensor_readings",
+    database = "student",
     use_pure = True
 )
 
 # form a query to be executed
-id = int(input("Enter id of a sensor_readings to be deleted : "))
+rollno = int(input("Enter rollno of a student to be deleted : "))
 
-query = f"delete from sensor_readings where id = {id};"
+query = f"delete from student where rollno = {rollno};"
 
 # create a cursor to execute a query
 cursor = connection.cursor()
